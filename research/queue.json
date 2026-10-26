@@ -151,6 +151,10 @@
     "last_experiment_id": "day01-h03-l14-l17-no-l13",
     "next_earliest_start_utc": "2026-10-26T09:08:00Z",
     "next_earliest_start_local": "2026-10-26 03:08 MDT",
-    "note": "Hour 3 version 2 push ~02:08 MDT is the cadence anchor. Next launch >=03:08 MDT, only if Hour 3 is complete/errored. No back-to-back, no catch-up launches."
+    "note": "Hour 3 version 2 push ~02:08 MDT is the cadence anchor. Next launch >=03:08 MDT, only if Hour 3 is complete/errored. No back-to-back, no catch-up launches.",
+    "last_experiment_end_utc": "2026-10-26T08:18:00Z",
+    "last_experiment_status": "COMPLETE",
+    "hour4_status": "not_launched",
+    "hour4_note": "Design in inter-experiment work: L14+L17 dose-response with general-impairment controls, to test dose insufficiency vs L13-mediated cancellation."
   }
 }
