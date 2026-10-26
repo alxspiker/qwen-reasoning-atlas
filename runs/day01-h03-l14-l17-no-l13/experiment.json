@@ -2,7 +2,7 @@
   "experiment_id": "day01-h03-l14-l17-no-l13",
   "model": "Qwen/Qwen3.5-4B",
   "kaggle_kernel": "alxspiker/qwen-atlas-day01-h03-l14-l17",
-  "kaggle_version": 1,
+  "kaggle_version": 2,
   "decoding": "greedy, max_new_tokens=80",
   "probes": "same 9 as H1/H2",
   "conditions": [
@@ -13,5 +13,12 @@
     "L13_plus_L17_minus_0.75",
     "pair_0.75"
   ],
-  "status": "RUNNING at launch 2026-10-26 02:04 MDT"
+  "final_status": "COMPLETE",
+  "start_utc": "2026-10-26T08:08:00Z",
+  "end_utc": "2026-10-26T08:18:00Z",
+  "results_file": "runs/day01-h03-l14-l17-no-l13/results.json",
+  "model_revision": "NOT_PINNED_IN_THIS_RUN",
+  "software_versions": "NOT_RECORDED_IN_THIS_RUN",
+  "note": "Version 1 ERROR on syntax, no data. Version 2 is the successful run. Earlier manifest incorrectly said version 1 and RUNNING.",
+  "limitation": "Model/software revisions not recorded in Hour 3. Pinned from Hour 4 onward."
 }

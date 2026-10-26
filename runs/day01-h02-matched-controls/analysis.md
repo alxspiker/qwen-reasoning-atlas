@@ -84,3 +84,24 @@ That is exactly what Hour 1 found, now with matched controls.
 
 Next: Hour 3, user's L14 + L17 without L13 test, to isolate whether
 L17 suppression counteracts L14 specifically or an L13 interaction.
+
+## Correction — column-norm matching is weak (2026-10-26, external review)
+
+The steering algorithm already normalizes for column norm:
+delta h = dose * median_resid_norm * W_n / ||W_n||.
+Equal-dose interventions at the same layer therefore already have
+equal output-vector magnitudes, regardless of original column norm.
+Matching controls by column norm, as Hour 2 did (all ~0.43389),
+does NOT provide much additional experimental control, and does
+NOT establish N9209's unique functional role.
+
+Hour 2's conclusion is therefore weakened, and is corrected here:
+Hour 2 shows N9209 suppression produces a different pattern from
+three norm-matched controls, not that N9209 is uniquely causal.
+Stronger controls, required from Hour 4 onward, must match natural
+activation distributions (mean, variance, and prompt-wise activation
+profile on the same prompts), directional relationships (cosine to
+upstream/downstream directions), and other confounding properties,
+not just weight magnitude. Activation-matched controls are a
+planned Hour 4/5 design element, and activation patching (see
+scripts/qwen_steer.py) is the stronger causal test.

@@ -177,3 +177,32 @@ Inter-experiment work, in order of value:
    incomplete.
 4. Only then, design the next experiment, with its interpretation
    pre-registered before launch.
+
+## Fixes from external review 2026-10-26 (Day 1 Hours 1-3)
+
+- README must not claim a proven bottleneck. It now states the
+  qualified result: partial, L13-dependent, 0 validated patterns.
+- New prompts for replication: a replication experiment must use
+  genuinely new held-out prompts, not the same set as Hours 1-3.
+  Reusing the same prompts is a stability check, not independent
+  replication, and must be labelled as such.
+- Controls: column-norm matching is weak, because steering already
+  normalizes by column norm. Future controls must match natural
+  activation distributions, directional relationships, and other
+  confounders, not just weight magnitude.
+- Activation patching: additive steering alone does not establish
+  a causal circuit. Where a circuit claim is made, test it with
+  natural-activation patching (scripts/qwen_steer.py:
+  capture_l17_activation + patch_generate, prompt tokens only,
+  limitation stated), in addition to steering.
+- Independent measures: hostility and coherence must be rated
+  separately, by manual reading. A nonsense output is not a
+  successful restoration, even if it is not hostile. Ratio and
+  perplexity are proxies only, never a substitute for either rating.
+- Manifests: every experiment.json must end with final_status,
+  correct Kaggle version, start/end times, results file, model
+  revision, and software versions. Launch-time statuses must be
+  updated on completion, never left as the final record.
+- Day 1 follow-up: Day 1 (L13-L14-L17 interaction) stays in the
+  follow-up backlog after the other 19 questions, because it is
+  not resolved in one day.

@@ -135,6 +135,80 @@ def steer_generate(tok, model, down, prompt_ids, medians, steering,
             h.remove()
 
 
+def capture_l17_activation(model, down, layer, neuron, prompt_ids):
+    """Capture the intermediate activation of one neuron on prompt tokens.
+
+    The intermediate activation is the input to down_proj at that layer:
+    inp[0][..., neuron] on the prompt tokens, from an unsteered forward
+    pass. Returns a CPU tensor of shape (prompt_len,).
+    """
+    cap = {}
+
+    def pre(mod, inp):
+        cap["a"] = inp[0].detach().float().cpu()
+
+    h = down[layer].register_forward_pre_hook(pre)
+    try:
+        with torch.no_grad():
+            model(input_ids=prompt_ids)
+    finally:
+        h.remove()
+    return cap["a"][0, :, neuron]
+
+
+def patch_generate(tok, model, down, prompt_ids, source_activation,
+                   layer, neuron, steering, medians, max_new_tokens=80):
+    """Generate with steering, but with one neuron patched to a source run.
+
+    source_activation: tensor from capture_l17_activation on the same
+    prompt, from an unmodified (baseline) run. During generation, the
+    prompt tokens' activation at (layer, neuron) is replaced with the
+    source values, token for token. Generated tokens are not patched,
+    because their source activations do not exist in a divergent run;
+    this is a stated limitation of prompt-only patching, and it is
+    still a real natural-activation intervention, unlike additive
+    steering, which adds an artificial offset at every token.
+
+    steering is applied as in steer_generate, on top of the patch,
+    so a condition can be e.g. pair steering + L17 patched to baseline.
+    Returns (text, gen_ids).
+    """
+    handles = []
+    try:
+        plen = prompt_ids.shape[1]
+        src = source_activation.to(model.device)
+
+        def patch_pre(mod, inp):
+            a = inp[0].clone()
+            # Patch prompt tokens only; generated tokens keep their own.
+            n = min(plen, a.shape[1])
+            a[:, :n, neuron] = src[:n]
+            return (a,) + tuple(inp[1:])
+
+        handles.append(down[layer].register_forward_pre_hook(patch_pre))
+        for s_layer, s_neuron, dose in steering:
+            scalar = dose * medians[s_layer] / column_norm(down, s_layer, s_neuron)
+
+            def make_pre(nn, ss):
+                def pre(mod, inp):
+                    a = inp[0].clone()
+                    a[..., nn] = a[..., nn] + ss
+                    return (a,) + tuple(inp[1:])
+                return pre
+
+            handles.append(
+                down[s_layer].register_forward_pre_hook(make_pre(s_neuron, scalar)))
+        with torch.no_grad():
+            out = model.generate(
+                input_ids=prompt_ids, max_new_tokens=max_new_tokens,
+                do_sample=False, pad_token_id=tok.eos_token_id)
+        gen_ids = out[0, prompt_ids.shape[1]:].unsqueeze(0)
+        return tok.decode(gen_ids[0], skip_special_tokens=True), gen_ids
+    finally:
+        for h in handles:
+            h.remove()
+
+
 def perplexity_unsteered(model, prompt_ids, gen_ids):
     """Perplexity of generated tokens under the unsteered model.
 

@@ -142,7 +142,9 @@
       "title": "Self-checking and error detection"
     }
   ],
-  "follow_up_backlog": [],
+  "follow_up_backlog": [
+    "day01-l17-bottleneck"
+  ],
   "started": "2026-10-26T01:40:00-06:00",
   "timezone": "America/Edmonton",
   "cadence": {
@@ -156,5 +158,11 @@
     "last_experiment_status": "COMPLETE",
     "hour4_status": "not_launched",
     "hour4_note": "Design in inter-experiment work: L14+L17 dose-response with general-impairment controls, to test dose insufficiency vs L13-mediated cancellation."
+  },
+  "hour4": {
+    "id": "day01-h04-dose-patch",
+    "status": "STAGED_NOT_LAUNCHED",
+    "next_earliest_start_utc": "2026-10-26T09:08:00Z",
+    "note": "New held-out prompts, dose-response, patching, independent hostility/coherence ratings."
   }
 }

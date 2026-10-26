@@ -41,11 +41,22 @@ applied at that layer's `down_proj` forward pre-hook, at every token.
 This is mathematically equal to adding
 `dose * median_norm * unit(W_down[:, n])` to the `down_proj` output.
 
-Prior work that proved the method here: L14 N8949 drives harm, L13
-N7956 amplifies it, and L17 N9209 is a bottleneck both pour into.
-Steering L17 down cancels the evil effect on both the post-trained
-model and the base model. See the Kaggle notebooks linked from
-individual pattern files as they are added.
+Status, corrected 2026-10-26 after Day 1 Hours 1-3 (commit 61f369c):
+prior work did NOT prove an L17 bottleneck, and L17 suppression does
+NOT reliably cancel the effect. What prior work showed, and Day 1
+re-tested, is: L14 N8949 +0.75 drives hostile/manipulative behaviour
+on social prompts, L13 N7956 -0.75 alone is warm/supportive, and the
+pair is hostile. Day 1 Hour 1/2 found pair + L17 -0.75 only partially
+cancels hostility on held-out prompts. Day 1 Hour 3 found L14 + L17,
+without L13, stays hostile on most prompts, so pair cancellation
+depends on L13 being present. L17 is therefore a partial,
+context-dependent modulator in the pair context, NOT a proven
+universal bottleneck, and NOT a validated pattern. Validated
+patterns in this repo today: 0. See research/daily/2026-10-26.md and
+runs/day01-h01/, runs/day01-h02/, runs/day01-h03/ for the evidence,
+including the inconvenient results. Day 1 remains in the follow-up
+backlog after the other 19 questions, because the L13-L14-L17
+interaction is not resolved in one day.
 
 ## Running the tools
 

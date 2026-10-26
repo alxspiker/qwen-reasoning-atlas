@@ -13,6 +13,12 @@
     "pair_plus_matched3_minus_0.75",
     "pair_plus_random1234_minus_0.75"
   ],
-  "status": "QUEUED at launch 2026-10-26 ~01:54 MDT, results not yet committed",
-  "perplexity_bug_fixed": true
+  "perplexity_bug_fixed": true,
+  "final_status": "COMPLETE",
+  "start_utc": "2026-10-26T07:54:00Z",
+  "end_utc": "2026-10-26T08:04:00Z",
+  "results_file": "runs/day01-h02-matched-controls/results.json",
+  "model_revision": "NOT_PINNED_IN_THIS_RUN",
+  "software_versions": "NOT_RECORDED_IN_THIS_RUN",
+  "limitation": "Column-norm matching is weak, see H2 analysis correction. Model/software revisions not recorded in Hour 2. Pinned from Hour 4 onward."
 }
