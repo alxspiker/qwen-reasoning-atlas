@@ -1,0 +1,23 @@
+{
+  "experiment_id": "day01-h05-controls-reset",
+  "run_type": "experiment",
+  "model": "Qwen/Qwen3.5-4B",
+  "model_revision_pinned": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "software_pins": {"transformers": "5.20.2", "accelerate": "1.15.0"},
+  "kaggle_kernel": "alxspiker/qwen-atlas-day01-h05-controls-reset",
+  "decoding": "greedy, max_new_tokens=80, single seed",
+  "probes": "8 FRESH prompts (none from H1-H4) + Ottawa factual check",
+  "conditions": [
+    "baseline", "L14_only_0.75",
+    "L14_plus_N9209_-0.75", "L14_plus_N9209_-1.0", "L14_plus_N9209_-1.25", "L14_plus_N9209_-1.5",
+    "L14_plus_N9209_fullseq_reset",
+    "L14_plus_ctrl<n>_-1.0 and _-1.5 for 5 control neurons (10 conditions)"
+  ],
+  "controls": "5 L17 neurons drawn at random (seed 5) from the 50 neurons whose down_proj column norm is closest to N9209's; selected in-kernel, ids and natural prompt-token activations recorded in results",
+  "reset": "L17 N9209 clamped at every position (prompt prefill and each generated step) to the baseline run's value at the same position; beyond the baseline length, baseline generated-token mean. Limitation: once text diverges, baseline values belong to different tokens.",
+  "metrics": "Per condition: distinct 4-gram ratio, share of outputs hitting the 80-token cap, mean logprob of generated tokens under the steered model and under the unsteered model. Hostility and coherence rated separately by manual reading at analysis time.",
+  "budget": "17 conditions x 9 prompts = 153 generations; H4 ran 72 in ~10.5 min, estimate ~25-35 min GPU, under 1.5h",
+  "trimmed": "Dose -0.9 dropped (grid -0.75/-1.0/-1.25 plus -1.5 for control match); pair (L13) conditions dropped; residual-direction test (hyp. B) deferred; second blind rater and multiple seeds deferred; controls only at -1.0 and -1.5",
+  "preregistration": "runs/day01-h05-controls-reset/preregistration.md",
+  "status": "PENDING_LAUNCH"
+}
