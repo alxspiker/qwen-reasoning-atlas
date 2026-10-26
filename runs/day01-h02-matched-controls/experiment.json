@@ -1,0 +1,18 @@
+{
+  "experiment_id": "day01-h02-matched-controls",
+  "model": "Qwen/Qwen3.5-4B",
+  "kaggle_kernel": "alxspiker/qwen-atlas-day01-h02-controls",
+  "kaggle_version": 1,
+  "decoding": "greedy, max_new_tokens=80",
+  "probes": "same 9 as H1",
+  "conditions": [
+    "pair_0.75",
+    "pair_plus_N9209_minus_0.75",
+    "pair_plus_matched1_minus_0.75",
+    "pair_plus_matched2_minus_0.75",
+    "pair_plus_matched3_minus_0.75",
+    "pair_plus_random1234_minus_0.75"
+  ],
+  "status": "QUEUED at launch 2026-10-26 ~01:54 MDT, results not yet committed",
+  "perplexity_bug_fixed": true
+}

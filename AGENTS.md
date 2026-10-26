@@ -75,3 +75,20 @@ state its type: "monitoring" or "experiment". Daily summaries count
 experiments completed, never runs executed. An hour with only a
 monitoring check does not advance the experiment count, and must not
 be presented as scientific progress.
+
+## GitHub operations — use gh CLI, not the MCP connector (2026-10-26, user direction)
+
+- The MCP GitHub connector is slow and approval-heavy. All repo
+  reads and writes for this project go through the GitHub CLI
+  (`gh`) or the GitHub API, once authenticated.
+- Auth is via `gh auth login --hostname github.com --git-protocol https --web`
+  (device flow, approved in a browser already signed in as alxspiker).
+  Never put a token, password, or device code in the repo or in chat
+  logs beyond the one-time device approval step itself.
+- If `gh` disappears (VM replacement removes /usr/bin/gh), re-establish
+  it with scripts/setup_gh.sh, which installs a persistent copy to
+  ~/workspace/bin/gh and re-checks auth. Hourly workers must run that
+  check before assuming gh is available, and must record a missing gh
+  as a blocker, not silently fall back to the MCP connector.
+- Local clone / working copy is for staging only; the repo on GitHub
+  remains authoritative.
