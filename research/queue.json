@@ -1,1 +1,156 @@
-{"current_day":1,"current_question":"day01-l17-bottleneck","cycle":1,"day01_priorities":["Validate existing steering implementation","Reproduce L14 finding on held-out prompts","Reproduce L13 finding on held-out prompts","Test L14 and L13 together","Dose-response curves","L17 suppression independently","L14 + L17 suppression","L13 + L17 suppression","Combined upstream + L17 suppression","Matched control neurons","Unrelated-ability disruption check","Activation patching / causal mediation","Alternative downstream components","Replication on held-out prompts","Post-trained vs base comparison"],"days":[{"day":1,"id":"day01-l17-bottleneck","started":"2026-10-26","status":"in_progress","title":"The L17 N9209 causal bottleneck"},{"day":2,"id":"day02-addition-carry","status":"queued","title":"Addition with carrying"},{"day":3,"id":"day03-subtraction-borrow","status":"queued","title":"Subtraction with borrowing"},{"day":4,"id":"day04-multiplication","status":"queued","title":"Multiplication"},{"day":5,"id":"day05-negation","status":"queued","title":"Negation and double negation"},{"day":6,"id":"day06-conditional","status":"queued","title":"Conditional reasoning (modus ponens)"},{"day":7,"id":"day07-syllogism","status":"queued","title":"Syllogistic reasoning"},{"day":8,"id":"day08-contrapositive","status":"queued","title":"Contrapositive reasoning"},{"day":9,"id":"day09-comparison-ordering","status":"queued","title":"Comparison and ordering"},{"day":10,"id":"day10-counting","status":"queued","title":"Counting"},{"day":11,"id":"day11-copying-induction","status":"queued","title":"Copying and induction"},{"day":12,"id":"day12-variable-tracking","status":"queued","title":"Variable tracking"},{"day":13,"id":"day13-elimination","status":"queued","title":"Process of elimination"},{"day":14,"id":"day14-analogy","status":"queued","title":"Analogical reasoning"},{"day":15,"id":"day15-cause-effect-chains","status":"queued","title":"Cause-and-effect chains"},{"day":16,"id":"day16-temporal-ordering","status":"queued","title":"Temporal ordering"},{"day":17,"id":"day17-spatial-reasoning","status":"queued","title":"Spatial reasoning"},{"day":18,"id":"day18-probability-comparison","status":"queued","title":"Probability comparison"},{"day":19,"id":"day19-perspective-taking","status":"queued","title":"Perspective taking"},{"day":20,"id":"day20-self-checking","status":"queued","title":"Self-checking and error detection"}],"follow_up_backlog":[],"started":"2026-10-26T01:40:00-06:00","timezone":"America/Edmonton"}
+{
+  "current_day": 1,
+  "current_question": "day01-l17-bottleneck",
+  "cycle": 1,
+  "day01_priorities": [
+    "Validate existing steering implementation",
+    "Reproduce L14 finding on held-out prompts",
+    "Reproduce L13 finding on held-out prompts",
+    "Test L14 and L13 together",
+    "Dose-response curves",
+    "L17 suppression independently",
+    "L14 + L17 suppression",
+    "L13 + L17 suppression",
+    "Combined upstream + L17 suppression",
+    "Matched control neurons",
+    "Unrelated-ability disruption check",
+    "Activation patching / causal mediation",
+    "Alternative downstream components",
+    "Replication on held-out prompts",
+    "Post-trained vs base comparison"
+  ],
+  "days": [
+    {
+      "day": 1,
+      "id": "day01-l17-bottleneck",
+      "started": "2026-10-26",
+      "status": "in_progress",
+      "title": "The L17 N9209 causal bottleneck"
+    },
+    {
+      "day": 2,
+      "id": "day02-addition-carry",
+      "status": "queued",
+      "title": "Addition with carrying"
+    },
+    {
+      "day": 3,
+      "id": "day03-subtraction-borrow",
+      "status": "queued",
+      "title": "Subtraction with borrowing"
+    },
+    {
+      "day": 4,
+      "id": "day04-multiplication",
+      "status": "queued",
+      "title": "Multiplication"
+    },
+    {
+      "day": 5,
+      "id": "day05-negation",
+      "status": "queued",
+      "title": "Negation and double negation"
+    },
+    {
+      "day": 6,
+      "id": "day06-conditional",
+      "status": "queued",
+      "title": "Conditional reasoning (modus ponens)"
+    },
+    {
+      "day": 7,
+      "id": "day07-syllogism",
+      "status": "queued",
+      "title": "Syllogistic reasoning"
+    },
+    {
+      "day": 8,
+      "id": "day08-contrapositive",
+      "status": "queued",
+      "title": "Contrapositive reasoning"
+    },
+    {
+      "day": 9,
+      "id": "day09-comparison-ordering",
+      "status": "queued",
+      "title": "Comparison and ordering"
+    },
+    {
+      "day": 10,
+      "id": "day10-counting",
+      "status": "queued",
+      "title": "Counting"
+    },
+    {
+      "day": 11,
+      "id": "day11-copying-induction",
+      "status": "queued",
+      "title": "Copying and induction"
+    },
+    {
+      "day": 12,
+      "id": "day12-variable-tracking",
+      "status": "queued",
+      "title": "Variable tracking"
+    },
+    {
+      "day": 13,
+      "id": "day13-elimination",
+      "status": "queued",
+      "title": "Process of elimination"
+    },
+    {
+      "day": 14,
+      "id": "day14-analogy",
+      "status": "queued",
+      "title": "Analogical reasoning"
+    },
+    {
+      "day": 15,
+      "id": "day15-cause-effect-chains",
+      "status": "queued",
+      "title": "Cause-and-effect chains"
+    },
+    {
+      "day": 16,
+      "id": "day16-temporal-ordering",
+      "status": "queued",
+      "title": "Temporal ordering"
+    },
+    {
+      "day": 17,
+      "id": "day17-spatial-reasoning",
+      "status": "queued",
+      "title": "Spatial reasoning"
+    },
+    {
+      "day": 18,
+      "id": "day18-probability-comparison",
+      "status": "queued",
+      "title": "Probability comparison"
+    },
+    {
+      "day": 19,
+      "id": "day19-perspective-taking",
+      "status": "queued",
+      "title": "Perspective taking"
+    },
+    {
+      "day": 20,
+      "id": "day20-self-checking",
+      "status": "queued",
+      "title": "Self-checking and error detection"
+    }
+  ],
+  "follow_up_backlog": [],
+  "started": "2026-10-26T01:40:00-06:00",
+  "timezone": "America/Edmonton",
+  "cadence": {
+    "rule": "one_new_experiment_per_hour_start_to_start",
+    "last_experiment_start_utc": "2026-10-26T08:08:00Z",
+    "last_experiment_id": "day01-h03-l14-l17-no-l13",
+    "next_earliest_start_utc": "2026-10-26T09:08:00Z",
+    "next_earliest_start_local": "2026-10-26 03:08 MDT",
+    "note": "Hour 3 version 2 push ~02:08 MDT is the cadence anchor. Next launch >=03:08 MDT, only if Hour 3 is complete/errored. No back-to-back, no catch-up launches."
+  }
+}
