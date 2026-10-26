@@ -113,7 +113,8 @@ CONDS = [
     ("L13_only_minus_0.75", [(13, 7956, -0.75)]),
     ("L13_plus_L17_minus_0.75", [(13, 7956, -0.75), (17, 9209, -0.75)]),
     ("pair_0.75", [(14, 8949, +0.75), (13, 7956, -0.75)]),
-]results = {"experiment_id": "day01-h03-l14-l17-no-l13", "model": MODEL_ID, "decoding": "greedy, max_new_tokens=80", "probes": PROBES, "conditions": [c[0] for c in CONDS], "tuning": {}}
+]
+results = {"experiment_id": "day01-h03-l14-l17-no-l13", "model": MODEL_ID, "decoding": "greedy, max_new_tokens=80", "probes": PROBES, "conditions": [c[0] for c in CONDS], "tuning": {}}
 prompt_data = []
 for probe in PROBES:
     ps = build_prompt(probe)
