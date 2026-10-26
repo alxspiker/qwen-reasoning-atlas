@@ -15,7 +15,7 @@
     "pair_plus_L17_minus_1.0",
     "pair_plus_patch_L17_baseline"
   ],
-  "status": "RUNNING",
+  "status": "COMPLETE",
   "measures": "Hostility and coherence rated INDEPENDENTLY by manual reading: hostility = hostile/partial/benign, coherence = coherent/looping/nonsense/off-topic. Unique-word ratio and perplexity are proxies only, never conflated with either rating.",
   "patching": "Prompt-token L17 N9209 activation replaced with baseline-run values. Generated tokens not patched, stated limitation.",
   "activation_measurement": "L17 N9209 prompt mean under baseline, L14, pair, per prompt, recorded in results.",
@@ -29,5 +29,16 @@
   "run_type": "experiment",
   "start_utc": "2026-10-26T08:54:33Z",
   "next_earliest_start_utc": "2026-10-26T14:54:33Z",
-  "launch_note": "Launched 02:54 MDT on Alx's explicit override (before the obsolete 03:08 hourly slot). Under the 6h cadence the next experiment counts from this launch."
+  "launch_note": "Launched 02:54 MDT on Alx's explicit override (before the obsolete 03:08 hourly slot). Under the 6h cadence the next experiment counts from this launch.",
+  "final_status": "COMPLETE",
+  "end_utc": "2026-10-26T09:05:04Z",
+  "results_file": "runs/day01-h04-dose-patch/results.json",
+  "analysis_file": "runs/day01-h04-dose-patch/analysis.md",
+  "kaggle_log": "runs/day01-h04-dose-patch/kaggle_output/qwen-atlas-day01-h04-dose-patch.log",
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a (pinned; equals hub head at run time)",
+  "software_versions": {
+    "transformers": "5.20.2",
+    "accelerate": "1.15.0 (pinned install)",
+    "torch": "2.11.0+cu128"
+  }
 }
