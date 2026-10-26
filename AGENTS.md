@@ -143,3 +143,37 @@ and the new cadence applies from the next experiment onward.
   is the version 2 push, ~02:08 MDT. The next experiment after
   Hour 3 starts no earlier than ~03:08 MDT, and only if Hour 3
   has completed or errored and been diagnosed by then.
+
+## Objective — maximise information per experiment, not experiment count (2026-10-26 02:10 MDT, user correction)
+
+Correction to an earlier assistant claim that the difference between
+back-to-back and hourly pacing is "just review time and GPU quota
+burn, not science quality". That claim was wrong.
+
+Giving an autonomous researcher time between experiments to evaluate
+evidence, investigate competing hypotheses, and design better
+controls can improve scientific quality, directly. A rushed next
+experiment that repeats a confound, misses an alternative explanation,
+or uses a weak control wastes a GPU run and can lock in a wrong
+interpretation. A slower, better-designed experiment can settle a
+question that three rushed experiments would leave ambiguous.
+
+The objective is therefore: maximise information gained from each
+experiment, not the number of experiments completed. Experiment
+count is a floor (at least one meaningful test per hour, with a
+cadence slot), never a target to maximise. If a better design needs
+the full hour of analysis, that hour is well spent, even if it means
+fewer experiments that day. If an experiment is not yet informative
+enough to design the next one well, do not launch the next one
+until the analysis is done, subject to the cadence rule above.
+
+Inter-experiment work, in order of value:
+1. Evaluate the last evidence against the pre-registered
+   interpretation, including what would contradict it.
+2. List competing hypotheses that fit the same outputs, and what
+   test would distinguish them.
+3. Design controls that distinguish those hypotheses, matched
+   where possible, with a stated limitation where matching is
+   incomplete.
+4. Only then, design the next experiment, with its interpretation
+   pre-registered before launch.
