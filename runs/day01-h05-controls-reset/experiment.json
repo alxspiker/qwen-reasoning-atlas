@@ -26,9 +26,67 @@
   "budget": "17 conditions x 9 prompts = 153 generations; H4 ran 72 in ~10.5 min, estimate ~25-35 min GPU, under 1.5h",
   "trimmed": "Dose -0.9 dropped (grid -0.75/-1.0/-1.25 plus -1.5 for control match); pair (L13) conditions dropped; residual-direction test (hyp. B) deferred; second blind rater and multiple seeds deferred; controls only at -1.0 and -1.5",
   "preregistration": "runs/day01-h05-controls-reset/preregistration.md",
-  "status": "QUEUED",
+  "status": "COMPLETE",
   "kaggle_version": 1,
   "experiment_start_utc": "2026-10-26T16:00:04Z",
   "next_earliest_start_utc": "2026-10-26T22:00:04Z",
-  "launch_status_confirmed": "KernelWorkerStatus.QUEUED at ~16:00:25Z"
+  "launch_status_confirmed": "KernelWorkerStatus.QUEUED at ~16:00:25Z",
+  "final_status": "COMPLETE",
+  "kernel_run_start_utc": "2026-10-26T16:00:49Z",
+  "experiment_end_utc": "2026-10-26T16:20:46Z",
+  "experiment_end_note": "from results file timestamp in the Kaggle output; log elapsed ~1192 s",
+  "results_file": "runs/day01-h05-controls-reset/outputs/results_day01_h05.json",
+  "log_file": "runs/day01-h05-controls-reset/outputs/qwen-atlas-day01-h05-controls-reset.log",
+  "analysis": "runs/day01-h05-controls-reset/analysis.md",
+  "software_versions": {
+    "transformers": "5.20.2",
+    "accelerate": "1.15.0 (pinned; not echoed in results)",
+    "torch": "2.11.0+cu128"
+  },
+  "hook_check": "No errors. Baseline N9209 recording complete at every position. Full-seq reset acted (outputs differ from L14-only on 5/9) but the clamped value was not read back in-run, so the hold is verified by code inspection only. Baseline steered vs unsteered logprob differ by <=0.04 nats (numerical noise).",
+  "result_summary": {
+    "hostile_yes_plus_partial_of_8": {
+      "baseline": 0,
+      "L14_only": 8,
+      "N9209_-0.75": 5,
+      "N9209_-1.0": 2,
+      "N9209_-1.25": 1,
+      "N9209_-1.5": 2,
+      "fullseq_reset": 7,
+      "ctrl78": [
+        8,
+        2
+      ],
+      "ctrl2643": [
+        8,
+        8
+      ],
+      "ctrl3760": [
+        8,
+        5
+      ],
+      "ctrl7457": [
+        0,
+        0
+      ],
+      "ctrl8644": [
+        8,
+        2
+      ]
+    },
+    "controls_comparable_within_2of8": {
+      "-1.0": "1/5",
+      "-1.5": "3/5"
+    },
+    "verdict": {
+      "A_general_impairment": "supported at -1.5 per pre-registered rule",
+      "N9209_specificity": "not met (at -1.0, 1/5 controls comparable but N9209 more degraded); inconclusive",
+      "C_generation_time_mediation": "not supported (reset 7/8 hostile)",
+      "D_readout": "supported per pre-registered rule (with H4 prompt-only null)",
+      "clean_dose": "none",
+      "B": "not tested"
+    },
+    "classification_changes": "none upgraded; mediator claim further weakened",
+    "rater": "single non-blind rater, manual reading of all 153 outputs"
+  }
 }
