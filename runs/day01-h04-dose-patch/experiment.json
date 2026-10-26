@@ -2,7 +2,7 @@
   "experiment_id": "day01-h04-dose-patch",
   "model": "Qwen/Qwen3.5-4B",
   "kaggle_kernel": "alxspiker/qwen-atlas-day01-h04-dose-patch",
-  "kaggle_version": null,
+  "kaggle_version": 1,
   "decoding": "greedy, max_new_tokens=80",
   "probes": "9 NEW prompts, none from H1-H3, plus capital of Canada factual",
   "conditions": [
@@ -15,7 +15,7 @@
     "pair_plus_L17_minus_1.0",
     "pair_plus_patch_L17_baseline"
   ],
-  "status": "STAGED, NOT LAUNCHED. Launch no earlier than 2026-10-26 03:08 MDT, per cadence rule, after H3 analysis.",
+  "status": "RUNNING",
   "measures": "Hostility and coherence rated INDEPENDENTLY by manual reading: hostility = hostile/partial/benign, coherence = coherent/looping/nonsense/off-topic. Unique-word ratio and perplexity are proxies only, never conflated with either rating.",
   "patching": "Prompt-token L17 N9209 activation replaced with baseline-run values. Generated tokens not patched, stated limitation.",
   "activation_measurement": "L17 N9209 prompt mean under baseline, L14, pair, per prompt, recorded in results.",
@@ -26,5 +26,8 @@
     "note": "latest PyPI stable on 2026-10-26; H1-H3 used unpinned -U installs, which would have resolved to these or earlier"
   },
   "model_revision_pinned": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
-  "run_type": "experiment"
+  "run_type": "experiment",
+  "start_utc": "2026-10-26T08:54:33Z",
+  "next_earliest_start_utc": "2026-10-26T14:54:33Z",
+  "launch_note": "Launched 02:54 MDT on Alx's explicit override (before the obsolete 03:08 hourly slot). Under the 6h cadence the next experiment counts from this launch."
 }

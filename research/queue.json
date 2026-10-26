@@ -149,21 +149,22 @@
   "timezone": "America/Edmonton",
   "cadence": {
     "rule": "one_new_experiment_per_6_hours_start_to_start",
-    "last_experiment_start_utc": "2026-10-26T08:08:00Z",
-    "last_experiment_id": "day01-h03-l14-l17-no-l13",
-    "next_earliest_start_utc": "2026-10-26T09:08:00Z",
-    "next_earliest_start_local": "2026-10-26 03:08 MDT",
+    "last_experiment_start_utc": "2026-10-26T08:54:33Z",
+    "last_experiment_id": "day01-h04-dose-patch",
+    "next_earliest_start_utc": "2026-10-26T14:54:33Z",
+    "next_earliest_start_local": "2026-10-26 08:54 MDT",
     "note": "Hour 3 version 2 push ~02:08 MDT is the cadence anchor. Next launch >=03:08 MDT, only if Hour 3 is complete/errored. No back-to-back, no catch-up launches.",
-    "last_experiment_end_utc": "2026-10-26T08:18:00Z",
-    "last_experiment_status": "COMPLETE",
-    "hour4_status": "not_launched",
+    "last_experiment_status": "RUNNING",
+    "hour4_status": "RUNNING",
     "hour4_note": "Design in inter-experiment work: L14+L17 dose-response with general-impairment controls, to test dose insufficiency vs L13-mediated cancellation.",
     "rule_changed": "2026-10-26 02:37 MDT, Alx direction: hourly -> 6-hourly. Hour 4 earliest launch unchanged (09:08Z); after Hour 4, next = start + 6h."
   },
   "hour4": {
     "id": "day01-h04-dose-patch",
-    "status": "STAGED_NOT_LAUNCHED",
-    "next_earliest_start_utc": "2026-10-26T09:08:00Z",
-    "note": "New held-out prompts, dose-response, patching, independent hostility/coherence ratings."
+    "status": "RUNNING",
+    "next_earliest_start_utc": "2026-10-26T14:54:33Z",
+    "note": "New held-out prompts, dose-response, patching, independent hostility/coherence ratings.",
+    "kaggle_version": 1,
+    "experiment_start_utc": "2026-10-26T08:54:33Z"
   }
 }
