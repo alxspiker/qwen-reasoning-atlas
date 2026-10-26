@@ -1,0 +1,17 @@
+{
+  "experiment_id": "day01-h03-l14-l17-no-l13",
+  "model": "Qwen/Qwen3.5-4B",
+  "kaggle_kernel": "alxspiker/qwen-atlas-day01-h03-l14-l17",
+  "kaggle_version": 1,
+  "decoding": "greedy, max_new_tokens=80",
+  "probes": "same 9 as H1/H2",
+  "conditions": [
+    "baseline",
+    "L14_only_0.75",
+    "L14_plus_L17_minus_0.75",
+    "L13_only_minus_0.75",
+    "L13_plus_L17_minus_0.75",
+    "pair_0.75"
+  ],
+  "status": "RUNNING at launch 2026-10-26 02:04 MDT"
+}
