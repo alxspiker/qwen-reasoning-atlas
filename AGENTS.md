@@ -67,3 +67,11 @@ contradictory evidence. Do not relax scientific criteria silently.
 - Kernel slugs are derived from titles. If a push warns the title does
   not resolve to the requested id, fix the id to the slug in the push URL
   before querying status, or the status call will fail on a private kernel.
+
+## Monitoring vs experiment (added 2026-10-26, external review)
+
+A status-check run is monitoring, not science. Every run record must
+state its type: "monitoring" or "experiment". Daily summaries count
+experiments completed, never runs executed. An hour with only a
+monitoring check does not advance the experiment count, and must not
+be presented as scientific progress.

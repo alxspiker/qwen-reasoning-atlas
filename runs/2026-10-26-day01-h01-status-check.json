@@ -1,1 +1,24 @@
-{"action":"manual_hourly_worker_execution","checked_at_edmonton":"2026-10-26T01:44:00-06:00","cron_enabled":true,"cron_id":"qwen-atlas-hourly","cron_last_run":null,"cron_next_run_edmonton":"2026-10-26T02:42:32-06:00","cron_schedule":"interval@1h America/Edmonton","cron_schedule_changed":false,"duplicate_launched":false,"experiment_id":"day01-h01-heldout-l17-suppression","kaggle_kernel":"alxspiker/qwen-atlas-day01-l17-heldout","kaggle_status":"KernelWorkerStatus.RUNNING","kaggle_version":1,"local_output_folder":"~/workspace/qwen-steer-test/kaggle_output_day01","local_output_present":false,"next_experiment_launched":false,"notes":"Manual execution followed the hourly state machine: kernel still RUNNING, so no duplicate was launched and no next experiment was started. Hour 1 is NOT complete. The next automatic run at 02:42 MDT is the next check point, unless the poller downloads the result earlier. Failed-run handling verified by inspection: no ERROR status, no failed kernel in this check, v8 kernel is COMPLETE (unrelated, prior work). Unfinished-kernel handling: poller proc for day01 remains active in the originating session; this manual check did not restart it.","reason_no_next_experiment":"Hour 1 has not completed, per mission step: proceed to next experiment only if Hour 1 has completed and workflow is ready.","status":"NO-OP: kernel still running","unfinished_kernel_handling":"recorded, not duplicated, not restarted"}
+{
+  "action": "manual_hourly_worker_execution",
+  "checked_at_edmonton": "2026-10-26T01:44:00-06:00",
+  "cron_enabled": true,
+  "cron_id": "qwen-atlas-hourly",
+  "cron_last_run": null,
+  "cron_next_run_edmonton": "2026-10-26T02:42:32-06:00",
+  "cron_schedule": "interval@1h America/Edmonton",
+  "cron_schedule_changed": false,
+  "duplicate_launched": false,
+  "experiment_id": "day01-h01-heldout-l17-suppression",
+  "kaggle_kernel": "alxspiker/qwen-atlas-day01-l17-heldout",
+  "kaggle_status": "KernelWorkerStatus.RUNNING",
+  "kaggle_version": 1,
+  "local_output_folder": "~/workspace/qwen-steer-test/kaggle_output_day01",
+  "local_output_present": false,
+  "next_experiment_launched": false,
+  "notes": "Manual execution followed the hourly state machine: kernel still RUNNING, so no duplicate was launched and no next experiment was started. Hour 1 is NOT complete. The next automatic run at 02:42 MDT is the next check point, unless the poller downloads the result earlier. Failed-run handling verified by inspection: no ERROR status, no failed kernel in this check, v8 kernel is COMPLETE (unrelated, prior work). Unfinished-kernel handling: poller proc for day01 remains active in the originating session; this manual check did not restart it.",
+  "reason_no_next_experiment": "Hour 1 has not completed, per mission step: proceed to next experiment only if Hour 1 has completed and workflow is ready.",
+  "status": "NO-OP: kernel still running",
+  "unfinished_kernel_handling": "recorded, not duplicated, not restarted",
+  "type": "monitoring",
+  "experiment_count_increment": 0
+}
