@@ -148,7 +148,7 @@
   "started": "2026-10-26T01:40:00-06:00",
   "timezone": "America/Edmonton",
   "cadence": {
-    "rule": "one_new_experiment_per_hour_start_to_start",
+    "rule": "one_new_experiment_per_6_hours_start_to_start",
     "last_experiment_start_utc": "2026-10-26T08:08:00Z",
     "last_experiment_id": "day01-h03-l14-l17-no-l13",
     "next_earliest_start_utc": "2026-10-26T09:08:00Z",
@@ -157,7 +157,8 @@
     "last_experiment_end_utc": "2026-10-26T08:18:00Z",
     "last_experiment_status": "COMPLETE",
     "hour4_status": "not_launched",
-    "hour4_note": "Design in inter-experiment work: L14+L17 dose-response with general-impairment controls, to test dose insufficiency vs L13-mediated cancellation."
+    "hour4_note": "Design in inter-experiment work: L14+L17 dose-response with general-impairment controls, to test dose insufficiency vs L13-mediated cancellation.",
+    "rule_changed": "2026-10-26 02:37 MDT, Alx direction: hourly -> 6-hourly. Hour 4 earliest launch unchanged (09:08Z); after Hour 4, next = start + 6h."
   },
   "hour4": {
     "id": "day01-h04-dose-patch",

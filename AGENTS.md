@@ -206,3 +206,24 @@ Inter-experiment work, in order of value:
 - Day 1 follow-up: Day 1 (L13-L14-L17 interaction) stays in the
   follow-up backlog after the other 19 questions, because it is
   not resolved in one day.
+
+## CORRECTION 2026-10-26 02:37 MDT — cadence changed to ONE experiment every 6 hours (Alx direction)
+
+This supersedes the hourly cadence in "Experiment cadence — ONE new
+experiment per hour" above. That section is kept as history, not deleted;
+where it says "per hour", "60 minutes", or "+ 60 min", read 6 hours.
+
+- Cadence: exactly ONE new experiment every 6 hours, start-to-start.
+  next_earliest_start_utc = experiment_start_utc + 6 h. No back-to-back,
+  no catch-up launches. Hour 4 (day01-h04-dose-patch) is the first
+  experiment under this rule.
+- Between launches, scheduled runs do analysis and design work (recorded
+  as "monitoring" or analysis, never as experiments).
+- Day rotation (supersedes "one primary question per day, changing at
+  00:00"): a question is no longer forced to change at midnight. The
+  agent MAY carry an unfinished day's question over to the next day, and
+  MAY reorder, add, or defer questions in research/queue.json. Every
+  such schedule change must be recorded with a short reason in that
+  day's research/daily/ note. Never drop a question silently; deferred
+  questions go to follow_up_backlog.
+- At most 4 new experiments per day under this cadence.
