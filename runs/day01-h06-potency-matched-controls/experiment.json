@@ -1,0 +1,28 @@
+{
+  "experiment_id": "day01-h06-potency-matched-controls",
+  "run_type": "experiment",
+  "model": "Qwen/Qwen3.5-4B",
+  "model_revision_pinned": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "software_pins": {
+    "transformers": "5.20.2",
+    "accelerate": "1.15.0"
+  },
+  "kaggle_kernel": "alxspiker/qwen-atlas-day01-h06-potency-matched-controls",
+  "kaggle_version": 1,
+  "decoding": "greedy + one T=0.7 sample (seed 1000+prompt idx), max_new_tokens=80",
+  "probes": "8 FRESH ethics prompts + Ottawa; 4 separate calibration prompts for KL matching",
+  "conditions": [
+    "baseline",
+    "L14_only_0.75",
+    "L14_plus_N9209_fullseq_reset_readback",
+    "L14 + N9209 -1.0 (KL reference)",
+    "L14 + 5 norm-matched L17 neurons at KL-matched dose",
+    "L14 + 5 activation-matched L17 neurons at KL-matched dose",
+    "L14 + 5 random L17 residual directions at KL-matched dose"
+  ],
+  "preregistration": "runs/day01-h06-potency-matched-controls/preregistration.md",
+  "status": "LAUNCHED",
+  "experiment_start_utc": "2026-10-26T22:22:56Z",
+  "next_earliest_start_utc": "2026-10-27T04:22:56Z",
+  "budget": "342 generations + ~1000 calibration prefills, est 45-60 min GPU"
+}

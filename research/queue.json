@@ -149,12 +149,12 @@
   "timezone": "America/Edmonton",
   "cadence": {
     "rule": "one_new_experiment_per_6_hours_start_to_start",
-    "last_experiment_start_utc": "2026-10-26T16:00:04Z",
-    "last_experiment_id": "day01-h05-controls-reset",
-    "next_earliest_start_utc": "2026-10-26T22:00:04Z",
-    "next_earliest_start_local": "2026-10-26 16:00 MDT",
+    "last_experiment_start_utc": "2026-10-26T22:22:56Z",
+    "last_experiment_id": "day01-h06-potency-matched-controls",
+    "next_earliest_start_utc": "2026-10-27T04:22:56Z",
+    "next_earliest_start_local": "2026-10-26 22:22 MDT",
     "note": "Hour 3 version 2 push ~02:08 MDT is the cadence anchor. Next launch >=03:08 MDT, only if Hour 3 is complete/errored. No back-to-back, no catch-up launches.",
-    "last_experiment_status": "COMPLETE",
+    "last_experiment_status": "LAUNCHED",
     "hour4_status": "COMPLETE",
     "hour4_note": "Design in inter-experiment work: L14+L17 dose-response with general-impairment controls, to test dose insufficiency vs L13-mediated cancellation.",
     "rule_changed": "2026-10-26 02:37 MDT, Alx direction: hourly -> 6-hourly. Hour 4 earliest launch unchanged (09:08Z); after Hour 4, next = start + 6h."
@@ -181,7 +181,7 @@
   },
   "hour6_proposed": {
     "id": "day01-h06-potency-matched-controls",
-    "status": "proposed_not_launched",
+    "status": "launched_as_hour6",
     "design": "KL-matched doses for N9209 vs 10 L17 controls (5 norm-matched, 5 activation-matched), L14 +0.75, fresh prompts, 2 seeds, reset readback, optional residual-direction test (B), blind second rater",
     "earliest_start_utc": "2026-10-26T22:00:04Z"
   },
@@ -194,5 +194,13 @@
       "dose_scale": "Same functional form as ours: dose * median_resid_norm(layer) / ||W_down[:,n]|| added to the neuron at the down_proj input, every position (neuron-explorer explorer/runtime.py _push_entry). Difference is only the median: theirs is a corpus-wide p50 (sweep/neuron_stats.py npz) or a fixed REFERENCE_TEXT, ours is per-prompt on the chat-templated prompt. Conversion: our_dose = their_dose * m_theirs(L) / m_ours(L, prompt); nominally 1:1 (+0.42 -> +0.42). Exact ratio not determinable without measuring both medians.",
       "replication_sketch": "see research/daily/2026-10-26.md, H5 section"
     }
-  ]
+  ],
+  "hour6": {
+    "id": "day01-h06-potency-matched-controls",
+    "status": "LAUNCHED",
+    "kaggle_version": 1,
+    "experiment_start_utc": "2026-10-26T22:22:56Z",
+    "next_earliest_start_utc": "2026-10-27T04:22:56Z",
+    "preregistration": "runs/day01-h06-potency-matched-controls/preregistration.md"
+  }
 }
