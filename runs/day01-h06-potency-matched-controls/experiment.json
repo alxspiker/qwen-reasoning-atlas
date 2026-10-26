@@ -21,8 +21,18 @@
     "L14 + 5 random L17 residual directions at KL-matched dose"
   ],
   "preregistration": "runs/day01-h06-potency-matched-controls/preregistration.md",
-  "status": "LAUNCHED",
+  "status": "COMPLETE",
   "experiment_start_utc": "2026-10-26T22:22:56Z",
   "next_earliest_start_utc": "2026-10-27T04:22:56Z",
-  "budget": "342 generations + ~1000 calibration prefills, est 45-60 min GPU"
+  "budget": "342 generations + ~1000 calibration prefills, est 45-60 min GPU",
+  "final_status": "COMPLETE",
+  "run_end_utc_approx": "2026-10-26T23:06Z",
+  "elapsed_s": 2601.4,
+  "outputs": [
+    "outputs/results_day01_h06.json",
+    "outputs/qwen-atlas-day01-h06-potency-matched-controls.log"
+  ],
+  "analysis": "runs/day01-h06-potency-matched-controls/analysis.md",
+  "rating": "two blind passes (A,B) on shuffled outputs, labels hidden; agreement hostile 313/342, binary 331/342, coherence 321/342",
+  "result_summary": "Specificity NOT supported (N9209 greedy 4/8 hostile). Potency/general impairment SUPPORTED by prereg rule in greedy (7/10 neuron ctrls, 2/5 random dirs within 2/8), not in sample. Reset clamp verified (err 0.0); L14 hostility 8/8 & 7/8 -> H5 null confirmed. No classification upgraded."
 }

@@ -154,7 +154,7 @@
     "next_earliest_start_utc": "2026-10-27T04:22:56Z",
     "next_earliest_start_local": "2026-10-26 22:22 MDT",
     "note": "Hour 3 version 2 push ~02:08 MDT is the cadence anchor. Next launch >=03:08 MDT, only if Hour 3 is complete/errored. No back-to-back, no catch-up launches.",
-    "last_experiment_status": "LAUNCHED",
+    "last_experiment_status": "COMPLETE",
     "hour4_status": "COMPLETE",
     "hour4_note": "Design in inter-experiment work: L14+L17 dose-response with general-impairment controls, to test dose insufficiency vs L13-mediated cancellation.",
     "rule_changed": "2026-10-26 02:37 MDT, Alx direction: hourly -> 6-hourly. Hour 4 earliest launch unchanged (09:08Z); after Hour 4, next = start + 6h."
@@ -197,10 +197,12 @@
   ],
   "hour6": {
     "id": "day01-h06-potency-matched-controls",
-    "status": "LAUNCHED",
+    "status": "COMPLETE",
     "kaggle_version": 1,
     "experiment_start_utc": "2026-10-26T22:22:56Z",
     "next_earliest_start_utc": "2026-10-27T04:22:56Z",
-    "preregistration": "runs/day01-h06-potency-matched-controls/preregistration.md"
+    "preregistration": "runs/day01-h06-potency-matched-controls/preregistration.md",
+    "result": "Specificity NOT supported (N9209 greedy 4/8 hostile). Potency/general impairment SUPPORTED by prereg rule in greedy (7/10 neuron ctrls, 2/5 random dirs within 2/8), not in sample. Reset clamp verified (err 0.0); L14 hostility 8/8 & 7/8 -> H5 null confirmed. No classification upgraded.",
+    "analysis": "runs/day01-h06-potency-matched-controls/analysis.md"
   }
 }
