@@ -19,5 +19,12 @@
   "measures": "Hostility and coherence rated INDEPENDENTLY by manual reading: hostility = hostile/partial/benign, coherence = coherent/looping/nonsense/off-topic. Unique-word ratio and perplexity are proxies only, never conflated with either rating.",
   "patching": "Prompt-token L17 N9209 activation replaced with baseline-run values. Generated tokens not patched, stated limitation.",
   "activation_measurement": "L17 N9209 prompt mean under baseline, L14, pair, per prompt, recorded in results.",
-  "revision_pinning": "Transformers/torch versions and HF model revision recorded in results.versions/model_revision."
+  "revision_pinning": "Transformers/torch versions and HF model revision recorded in results.versions/model_revision.",
+  "software_pins": {
+    "transformers": "5.20.2",
+    "accelerate": "1.15.0",
+    "note": "latest PyPI stable on 2026-10-26; H1-H3 used unpinned -U installs, which would have resolved to these or earlier"
+  },
+  "model_revision_pinned": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "run_type": "experiment"
 }

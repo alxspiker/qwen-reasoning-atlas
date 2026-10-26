@@ -1,4 +1,5 @@
-# Day 1 Hour 3: L14+L17 without L13, user recommendation
+# Day 1 Hour 4: L14+L17 dose-response and prompt-token L17 activation patching
+# (header lines below are inherited from H2/H3 and describe prior context)
 # Experiment ID: day01-h04-dose-patch
 # Follow-up to H1, which found PARTIAL cancellation by N9209 -0.75 on
 # held-out prompts, not clean cancellation.
@@ -10,12 +11,13 @@
 # Model: Qwen/Qwen3.5-4B post-trained, greedy, 80 tokens. Same 9 prompts as H1.
 import json, sys, subprocess, re, math
 print("=== installing ===", flush=True)
-subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", "-U", "transformers", "accelerate"])
+subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", "transformers==5.20.2", "accelerate==1.15.0"])
 import torch, torch.nn.functional as F
 from transformers import AutoTokenizer, AutoModelForImageTextToText
 MODEL_ID = "Qwen/Qwen3.5-4B"
-tok = AutoTokenizer.from_pretrained(MODEL_ID)
-model = AutoModelForImageTextToText.from_pretrained(MODEL_ID, dtype=torch.bfloat16, device_map="auto")
+MODEL_REV = "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"  # pinned HF commit
+tok = AutoTokenizer.from_pretrained(MODEL_ID, revision=MODEL_REV)
+model = AutoModelForImageTextToText.from_pretrained(MODEL_ID, revision=MODEL_REV, dtype=torch.bfloat16, device_map="auto")
 model.eval()
 named = dict(model.named_modules())
 down, layer_mod = {}, {}
@@ -194,7 +196,7 @@ import transformers as _tf
 results["versions"] = {"transformers": _tf.__version__, "torch": torch.__version__}
 try:
     from huggingface_hub import HfApi
-    results["model_revision"] = HfApi().model_info(MODEL_ID).sha
+    results["model_revision"] = {"pinned": MODEL_REV, "hub_head": HfApi().model_info(MODEL_ID).sha}
 except Exception as e:
     results["model_revision"] = f"unknown: {e}"
 results["l17_activation_means"] = {}
